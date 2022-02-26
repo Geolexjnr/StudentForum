@@ -31,7 +31,7 @@
 <div class="d-flex justify-content-center">
     <ul class="list-group list-group-flush mx-5 my-3" style="width: 35rem;">
     <div class="text-center">
-        <?php echo"<img src='".$profile_pic."' width='120rem' height='120rem' class='mx-auto my-3 rounded'>"?>
+        <?php echo"<img src='".$profile_pic."' width='200rem' height='200rem' class='mx-auto my-3 rounded'>"?>
     </div>
     <li class="list-group-item rounded"><b>Username</b>: <?php echo $username?></li>
     <li class="list-group-item rounded"><b>Email:</b> <?php echo $email ?> </li>
@@ -65,7 +65,9 @@
                     echo "<div class='mb-3'>";
                                 echo"<input class='form-control' name='image' type='file' multiple>";
                     echo"</div>";
-                                
+                    
+                    header("Location: account.php");
+
                     echo"<button type='submit' class='rounded-pill btn btn-outline-primary' name='change_pic'>Update Profile Picture</button><br/>";
 
                     if(isset($_POST['change_pic'])){
@@ -110,6 +112,7 @@
                 echo"</form";
             echo "</div>";
         echo "</div>";
+       
     }
 
     if($_GET['action']=="cp"){

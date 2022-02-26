@@ -4,6 +4,9 @@
     require('connection.php');
     include('header.php');
     include('navbar.php');
+    include('comments.inc.php');
+
+    date_default_timezone_set('Africa/Cairo');
 
     if($_SESSION["username"]){
         if($_GET['id']){
@@ -57,15 +60,41 @@ echo"<div class='d-flex justify-content-center'>";
 
         }
 
-   //echo "</div>";
 echo "</div>";
+
+
+
+echo "
+<div class='d-flex justify-content-center'>
+     <div class='text-center my-3' style='width: 35rem; display:flex; flex-wrap:wrap'>
+        <form action='".setComments($connect)."' method='POST'>
+                
+            <input type='hidden' class='form-control' name='c_author' value ='".$_SESSION['username']."'>
+            <input type='hidden' class='form-control' name='date' value='".date('Y-m-d H:i:s')."'>
+
+        <div class='mb-3'>
+            <textarea class='form-control' style='width: 35rem; height: 5rem; resize: none;'
+            name='message' placeholder='Comment here'></textarea>
+        </div>
+        
+        <button name='commentSubmit' type='submit' class='rounded-pill btn btn-outline-primary text-left' name='post_topic'>Comment</button>
+
+        </form>
+
+        
+    </div>
+</div>
+";
+
+    getComments($connect); 
+          
 ?>
 <body>
   
 </body>
 <?php
   echo "<div class='col text-center my-lg-4'>";
-  echo "<a href='index.php' class='rounded-pill btn btn-outline-primary'>Back</a>";
+  echo "<a href='index.php' class=' my-5 rounded-pill btn btn-outline-primary'>Back</a>";
  echo"</div>";  
 
 ?>

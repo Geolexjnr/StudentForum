@@ -25,6 +25,9 @@
         <li class="nav-item">
             <a class="nav-link" href="members.php">Members |</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="resources.php">Resources |</a>
+        </li>
 
         <li class="nav-item">
             

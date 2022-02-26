@@ -1,0 +1,14 @@
+.comment-box{
+padding: 20px;
+margin-bottom: 4px;
+border-radius: 6px;
+}
+
+.comment-box p{
+    font-family: arial;
+    font-size: 14px;
+    line-height: 16px;
+    color: #282828;
+    font-weight: 100;
+}
+                
